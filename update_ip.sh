@@ -12,6 +12,7 @@ TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
 declare -a URLS=(
     "https://antifilter.network/download/ipsmart.lst"
     "https://antifilter.network/download/ipsum.lst"
+    "https://antifilter.network/downloads/custom.lst"
     "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/cidr4.txt"
     "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/ipv4.txt"
 )
@@ -52,17 +53,25 @@ fi
 
 # Скачивание списков
 for url in "${URLS[@]}"; do
-    log "Скачивание списка: $url"
-    if curl -sSf --max-time 15 --retry 2 "$url" >> "$TEMP_FILE" 2>/dev/null; then
+    # Удаляем лишние пробелы из URL
+    clean_url=$(echo "$url" | xargs)
+    log "Скачивание списка: $clean_url"
+    if curl -sSf --max-time 15 --retry 2 "$clean_url" >> "$TEMP_FILE" 2>/dev/null; then
         log "✓ Успешно скачано"
     else
-        log "⚠️ Ошибка скачивания: $url"
+        log "⚠️ Ошибка скачивания: $clean_url"
     fi
 done
 
 # Обработка и очистка списка
 log "Обработка и очистка списка..."
-grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}(\/[0-9]{1,2})?' "$TEMP_FILE" | sort -u > "$REPO_DIR/$COMBINED_FILE"
+# 1. Извлекаем IP-адреса и сети
+# 2. Нормализуем формат (удаляем лишние символы)
+# 3. Удаляем дубликаты через sort -u
+grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}(\/[0-9]{1,2})?' "$TEMP_FILE" | \
+    awk '{gsub(/[^0-9.\/]/, "", $0); print $0}' | \
+    sort -t . -k 1,1n -k 2,2n -k 3,3n -k 4,4n | \
+    uniq > "$REPO_DIR/$COMBINED_FILE"
 
 # Подсчет количества записей
 COUNT=$(wc -l < "$REPO_DIR/$COMBINED_FILE")
