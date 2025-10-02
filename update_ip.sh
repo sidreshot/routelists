@@ -69,24 +69,6 @@ grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}(\/[0-9]{1,2})?' "$TEMP_FILE" | sort -u > "
 COUNT=$(wc -l < "$REPO_DIR/$COMBINED_FILE")
 log "Готово! Общее количество уникальных записей: $COUNT"
 
-# Обновление репозитория
-cd "$REPO_DIR" || exit
-git pull origin main 2>/dev/null
-
-# Проверка изменений
-if ! git diff --quiet "$COMBINED_FILE"; then
-    log "Обнаружены изменения. Создание коммита..."
-    git add "$COMBINED_FILE"
-    git commit -m "Автообновление списков IP: $COUNT записей [$(date +"%Y-%m-%d")]" || true
-    if git push origin main; then
-        log "✓ Изменения успешно отправлены на GitHub"
-    else
-        log "⚠️ Ошибка отправки изменений на GitHub"
-    fi
-else
-    log "Нет изменений. Обновление не требуется."
-fi
-
 log "=== ЗАВЕРШЕНИЕ ОБНОВЛЕНИЯ СПИСКОВ IP ==="
 echo "" >> "$LOG_FILE"
 exit 0
