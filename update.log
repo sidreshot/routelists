@@ -37700,3 +37700,20 @@
 [2025-10-10 05:15:01] Готово! Общее количество уникальных записей: 0
 [2025-10-10 05:15:01] === ЗАВЕРШЕНИЕ ОБНОВЛЕНИЯ СПИСКОВ IP ===
 
+[2025-10-10 05:20:01] === НАЧАЛО ОБНОВЛЕНИЯ СПИСКОВ IP ===
+[2025-10-10 05:20:01] Генерация списка Google IP через bgpq3...
+[2025-10-10 05:20:01] ✓ Список Google IP добавлен
+[2025-10-10 05:20:01] Скачивание списка: https://antifilter.network/download/ipsmart.lst
+[2025-10-10 05:20:01] ⚠️ Ошибка скачивания: https://antifilter.network/download/ipsmart.lst
+[2025-10-10 05:20:01] Скачивание списка: https://antifilter.network/download/ipsum.lst
+[2025-10-10 05:20:01] ⚠️ Ошибка скачивания: https://antifilter.network/download/ipsum.lst
+[2025-10-10 05:20:01] Скачивание списка: https://antifilter.network/downloads/custom.lst
+[2025-10-10 05:20:01] ⚠️ Ошибка скачивания: https://antifilter.network/downloads/custom.lst
+[2025-10-10 05:20:01] Скачивание списка: https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/cidr4.txt
+[2025-10-10 05:20:01] ⚠️ Ошибка скачивания: https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/cidr4.txt
+[2025-10-10 05:20:01] Скачивание списка: https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/ipv4.txt
+[2025-10-10 05:20:01] ⚠️ Ошибка скачивания: https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/ipv4.txt
+[2025-10-10 05:20:01] Обработка и очистка списка...
+[2025-10-10 05:20:01] Готово! Общее количество уникальных записей: 0
+[2025-10-10 05:20:01] === ЗАВЕРШЕНИЕ ОБНОВЛЕНИЯ СПИСКОВ IP ===
+
