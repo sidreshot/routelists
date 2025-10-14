@@ -11,6 +11,7 @@ TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
 # Список URL для скачивания
 declare -a URLS=(
     "https://antifilter.network/download/subnet.lst"
+    "https://antifilter.network/download/ipsmart.lst"
     "https://antifilter.network/download/ipsum.lst"
     "https://antifilter.network/downloads/custom.lst"
     "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/cidr4.txt"
