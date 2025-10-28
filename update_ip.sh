@@ -54,7 +54,7 @@ fi
 # Генерация списка GoDaddy через bgpq3 (если установлен)
 if command -v bgpq3 &> /dev/null; then
     log "Генерация списка GoDaddy IP через bgpq3..."
-    if bgpq3 AS-GODADDY 2>/dev/null | tail -n +2 | awk '{print $NF}' > "$TEMP_FILE"; then
+    if bgpq3 AS-GODADDY 2>/dev/null | tail -n +2 | awk '{print $NF}' >> "$TEMP_FILE"; then
         log "✓ Список GoDaddy IP добавлен"
     else
         log "⚠️ Ошибка генерации списка GoDaddy IP (bgpq3)"
@@ -66,7 +66,7 @@ fi
 # Генерация списка GoDaddy AS4007 через bgpq3 (если установлен)
 if command -v bgpq3 &> /dev/null; then
     log "Генерация списка GoDaddy IP через bgpq3..."
-    if bgpq3 AS4007 2>/dev/null | tail -n +2 | awk '{print $NF}' > "$TEMP_FILE"; then
+    if bgpq3 AS4007 2>/dev/null | tail -n +2 | awk '{print $NF}' >> "$TEMP_FILE"; then
         log "✓ Список GoDaddy IP добавлен"
     else
         log "⚠️ Ошибка генерации списка GoDaddy IP (bgpq3)"
@@ -78,7 +78,7 @@ fi
 # Генерация списка GoDaddy AS400754 через bgpq3 (если установлен)
 if command -v bgpq3 &> /dev/null; then
     log "Генерация списка GoDaddy IP через bgpq3..."
-    if bgpq3 AS400754 2>/dev/null | tail -n +2 | awk '{print $NF}' > "$TEMP_FILE"; then
+    if bgpq3 AS400754 2>/dev/null | tail -n +2 | awk '{print $NF}' >> "$TEMP_FILE"; then
         log "✓ Список GoDaddy IP добавлен"
     else
         log "⚠️ Ошибка генерации списка GoDaddy IP (bgpq3)"
@@ -92,7 +92,7 @@ fi
 # Генерация списка AMAZON через bgpq3 (если установлен)
 if command -v bgpq3 &> /dev/null; then
     log "Генерация списка AMAZON IP через bgpq3..."
-    if bgpq3 AS-AMAZON 2>/dev/null | tail -n +2 | awk '{print $NF}' > "$TEMP_FILE"; then
+    if bgpq3 AS-AMAZON 2>/dev/null | tail -n +2 | awk '{print $NF}' >> "$TEMP_FILE"; then
         log "✓ Список AMAZON IP добавлен"
     else
         log "⚠️ Ошибка генерации списка AMAZON IP (bgpq3)"
