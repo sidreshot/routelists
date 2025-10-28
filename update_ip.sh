@@ -102,6 +102,19 @@ else
 fi
 
 
+# Генерация списка ARIN через bgpq3 (если установлен)
+if command -v bgpq3 &> /dev/null; then
+    log "Генерация списка ARIN IP через bgpq3..."
+    if bgpq3 ARIN 2>/dev/null | tail -n +2 | awk '{print $NF}' >> "$TEMP_FILE"; then
+        log "✓ Список ARIN IP добавлен"
+    else
+        log "⚠️ Ошибка генерации списка ARIN IP (bgpq3)"
+    fi
+else
+    log "⚠️ bgpq3 не установлен. Для установки: sudo apt install bgpq3"
+fi
+
+
 # Скачивание списков
 for url in "${URLS[@]}"; do
     # Удаляем лишние пробелы из URL
