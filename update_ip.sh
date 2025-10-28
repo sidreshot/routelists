@@ -102,13 +102,13 @@ else
 fi
 
 
-# Генерация списка ARIN через bgpq3 (если установлен)
+# Генерация списка AS20940 AKAMAI через bgpq3 (если установлен)
 if command -v bgpq3 &> /dev/null; then
-    log "Генерация списка ARIN IP через bgpq3..."
-    if bgpq3 ARIN 2>/dev/null | tail -n +2 | awk '{print $NF}' >> "$TEMP_FILE"; then
-        log "✓ Список ARIN IP добавлен"
+    log "Генерация списка AS20940 AKAMAI IP через bgpq3..."
+    if bgpq3 AS20940 2>/dev/null | tail -n +2 | awk '{print $NF}' >> "$TEMP_FILE"; then
+        log "✓ Список AS20940 IP добавлен"
     else
-        log "⚠️ Ошибка генерации списка ARIN IP (bgpq3)"
+        log "⚠️ Ошибка генерации списка AS20940 AKAMAI IP (bgpq3)"
     fi
 else
     log "⚠️ bgpq3 не установлен. Для установки: sudo apt install bgpq3"
