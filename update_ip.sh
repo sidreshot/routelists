@@ -11,7 +11,6 @@ TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
 # Список URL для скачивания
 declare -a URLS=(
     "https://antifilter.network/download/subnet.lst"
-    "https://antifilter.network/download/ipsmart.lst"
     "https://antifilter.network/download/ipsum.lst"
     "https://antifilter.network/downloads/custom.lst"
     "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/cidr4.txt"
@@ -56,8 +55,6 @@ fi
 if command -v bgpq3 &> /dev/null; then
     log "Генерация списка GoDaddy IP через bgpq3..."
     if bgpq3 AS-GODADDY 2>/dev/null | tail -n +2 | awk '{print $NF}' > "$TEMP_FILE"; then
-
-    if bgpq3 AS4007 2>/dev/null | tail -n +2 | awk '{print $NF}' > "$TEMP_FILE"; then
         log "✓ Список GoDaddy IP добавлен"
     else
         log "⚠️ Ошибка генерации списка GoDaddy IP (bgpq3)"
