@@ -13,6 +13,7 @@ declare -a URLS=(
     "https://antifilter.network/download/subnet.lst"
     "https://antifilter.network/download/ipsum.lst"
     "https://antifilter.network/downloads/custom.lst"
+    "https://gist.githubusercontent.com/iamwildtuna/7772b7c84a11bf6e1385f23096a73a15/raw/083f8002e6a1c9b45e923afe358bfce747bc1c54/gistfile2.txt"
     "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/cidr4.txt"
     "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/ipv4.txt"
 )
