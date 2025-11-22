@@ -115,6 +115,18 @@ else
     log "⚠️ bgpq3 не установлен. Для установки: sudo apt install bgpq3"
 fi
 
+# лига легенд
+if command -v bgpq3 &> /dev/null; then
+    log "Генерация списка лига легенд IP через bgpq3..."
+    if bgpq3 AS6507 2>/dev/null | tail -n +2 | awk '{print $NF}' >> "$TEMP_FILE"; then
+        log "✓ Список лига легенд IP добавлен"
+    else
+        log "⚠️ Ошибка генерации списка лига легенд IP (bgpq3)"
+    fi
+else
+    log "⚠️ bgpq3 не установлен. Для установки: sudo apt install bgpq3"
+fi
+
 
 # Скачивание списков
 for url in "${URLS[@]}"; do
