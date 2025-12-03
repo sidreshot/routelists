@@ -11,12 +11,13 @@ TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
 # Список URL для скачивания
 declare -a URLS=(
     "https://antifilter.network/download/subnet.lst"
-    "https://antifilter.network/download/ipsum.lst"
+    "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/cidr4.txt"
+    "https://antifilter.download/list/ipresolve.lst"
     "https://antifilter.network/downloads/custom.lst"
+    "https://antifilter.network/download/ipsum.lst"
+    "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/ipv4.txt"
     "https://raw.githubusercontent.com/1andrevich/Re-filter-lists/refs/heads/main/ipsum.lst"
     "https://gist.githubusercontent.com/iamwildtuna/7772b7c84a11bf6e1385f23096a73a15/raw/083f8002e6a1c9b45e923afe358bfce747bc1c54/gistfile2.txt"
-    "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/cidr4.txt"
-    "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/ipv4.txt"
 )
 
 # Функция для логирования
