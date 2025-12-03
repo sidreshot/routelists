@@ -13,6 +13,7 @@ declare -a URLS=(
     "https://antifilter.network/download/subnet.lst"
     "https://antifilter.network/download/ipsum.lst"
     "https://antifilter.network/downloads/custom.lst"
+    "https://raw.githubusercontent.com/1andrevich/Re-filter-lists/refs/heads/main/ipsum.lst"
     "https://gist.githubusercontent.com/iamwildtuna/7772b7c84a11bf6e1385f23096a73a15/raw/083f8002e6a1c9b45e923afe358bfce747bc1c54/gistfile2.txt"
     "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/cidr4.txt"
     "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/ipv4.txt"
@@ -141,7 +142,7 @@ for url in "${URLS[@]}"; do
 done
 
 # Дополнительно! Роскомсвобода листы - список ip адресов
-curl -s https://reestr.rublacklist.net/api/v3/ips/ | tr -d '[]"' | tr ',' '\n' | sed 's/^[[:space:]]*//; /^[[:space:]]*$/d' >> "$TEMP_FILE"
+#curl -s https://reestr.rublacklist.net/api/v3/ips/ | tr -d '[]"' | tr ',' '\n' | sed 's/^[[:space:]]*//; /^[[:space:]]*$/d' >> "$TEMP_FILE"
 
 
 # Обработка и очистка списка
@@ -151,7 +152,9 @@ log "Обработка и очистка списка..."
 # 3. Удаляем дубликаты через sort -u
 
 # Удалить все строки, содержащие 0.0.0.0
-sed -i '/0\.0\.0\.0/d' ip_list.txt
+sed -i '/0\.0\.0\.0/d' "$TEMP_FILE"
+# ipv6 del
+sed -i '/:/d' "$TEMP_FILE"
 
 grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}(\/[0-9]{1,2})?' "$TEMP_FILE" | \
     awk '{gsub(/[^0-9.\/]/, "", $0); print $0}' | \
