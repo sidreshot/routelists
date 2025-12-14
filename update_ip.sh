@@ -18,6 +18,7 @@ declare -a URLS=(
     "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/ipv4.txt"
     "https://raw.githubusercontent.com/1andrevich/Re-filter-lists/refs/heads/main/ipsum.lst"
     "https://gist.githubusercontent.com/iamwildtuna/7772b7c84a11bf6e1385f23096a73a15/raw/083f8002e6a1c9b45e923afe358bfce747bc1c54/gistfile2.txt"
+    "https://www.cloudflare.com/ips-v4/#"
 )
 
 # Функция для логирования
