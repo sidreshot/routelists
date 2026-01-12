@@ -1,2 +1,4 @@
 # lidraughts.org
 188.165.192.0/18
+# whatsapp
+157.240.0.0/16
