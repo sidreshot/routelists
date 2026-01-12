@@ -12,6 +12,8 @@ TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
 declare -a URLS=(
 # custom networks
     "https://raw.githubusercontent.com/sidreshot/routelists/refs/heads/main/custom_nets.txt"
+# Hetzner DATACENTER cidr
+"https://raw.githubusercontent.com/Pymmdrza/Datacenter_List_DataBase_IP/refs/heads/mainx/Hetzner/CIDR.txt"
 # antifilter
     "https://antifilter.network/download/subnet.lst"
     "https://antifilter.download/list/ipresolve.lst"
