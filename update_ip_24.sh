@@ -28,6 +28,9 @@ declare -a URLS=(
     "https://gist.githubusercontent.com/samidunimsara/508da1032f470bdf402bc74f776ac65d/raw/00eb3afe0fc296a1307553a7fbe8fb2f61a8f0f4/aws-ip-ranges.txt"
 # whatsapp
 "https://raw.githubusercontent.com/HybridNetworks/whatsapp-cidr/refs/heads/main/WhatsApp/whatsapp_cidr_ipv4.txt"
+
+# telegram
+"https://core.telegram.org/resources/cidr.txt"
 # ALIBABA CLOUD (QWEN)
 "https://raw.githubusercontent.com/stclaird/Cloud-IP-Address-Ranges/refs/heads/main/ipfiles/alibaba-AS45102.ip.txt"
 )
