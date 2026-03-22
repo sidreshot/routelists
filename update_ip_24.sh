@@ -23,14 +23,20 @@ declare -a URLS=(
     "https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/ipv4.txt"
     "https://raw.githubusercontent.com/1andrevich/Re-filter-lists/refs/heads/main/ipsum.lst"
     "https://gist.githubusercontent.com/iamwildtuna/7772b7c84a11bf6e1385f23096a73a15/raw/083f8002e6a1c9b45e923afe358bfce747bc1c54/gistfile2.txt"
+
 # cloudflare
     "https://www.cloudflare.com/ips-v4/"
     "https://gist.githubusercontent.com/samidunimsara/508da1032f470bdf402bc74f776ac65d/raw/00eb3afe0fc296a1307553a7fbe8fb2f61a8f0f4/aws-ip-ranges.txt"
+
 # whatsapp
 "https://raw.githubusercontent.com/HybridNetworks/whatsapp-cidr/refs/heads/main/WhatsApp/whatsapp_cidr_ipv4.txt"
 
+# google
+"https://raw.githubusercontent.com/yeahwu/Google-IP-Range/refs/heads/master/ip_range_official.txt"
+
 # telegram
 "https://core.telegram.org/resources/cidr.txt"
+
 # ALIBABA CLOUD (QWEN)
 "https://raw.githubusercontent.com/stclaird/Cloud-IP-Address-Ranges/refs/heads/main/ipfiles/alibaba-AS45102.ip.txt"
 )
